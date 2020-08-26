@@ -65,3 +65,22 @@ deny
 Obviously change file name if you put them somewhere else.
 
 Restart Exim and watch the logs to check everything is okay.
+
+## Running as Non-root
+The default setting for `data_dir` is `/var/lib/invaluement-spbl` and if this
+directory doesn't exist the script will try to create it, which requires root
+access. This is the only thing it does which requires root access, so if you'd
+like to run it as an unpriveleged user — undoubtedly a good idea — all you need
+to do is:
+
+1. Make sure that `/var/lib/invaluement-spbl` (or whatever you set `data_dir`
+   to) exists and is owned by the correct user.
+
+2. Change the user in `/etc/cron.d/exim-invaluement-updater` from root to the
+   correct user.
+
+Note that your Exim process runs under its own user too. For example in Debian
+it runs as `Debian-exim`. Your Exim user will require read access to
+`/var/lib/invaluement-spbl` and the files inside it. It doesn't seem terrible
+to leave the files world readable, but if you don't like that then you may need
+to play with groups or filesystem ACLs.
