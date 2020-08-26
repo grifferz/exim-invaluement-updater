@@ -84,3 +84,16 @@ it runs as `Debian-exim`. Your Exim user will require read access to
 `/var/lib/invaluement-spbl` and the files inside it. It doesn't seem terrible
 to leave the files world readable, but if you don't like that then you may need
 to play with groups or filesystem ACLs.
+
+## Related Projects
+* [spamassassin-esp](https://github.com/bigio/spamassassin-esp) is a
+  SpamAssassin plugin which uses a downloaded copy of the SPBL to match
+  incoming mails and allow you to add your own scores. You'd need to manage the
+  regular download of the SPBL yourself.
+* [spamassassin-sendgrid](https://github.com/fmbla/spamassassin-sendgrid) is a
+  SpamAssassin plugin whuich extracts the SendGrid client ID and allows it to
+  be passed to a DNSBL, for those who have loaded Invaluement's lists into a
+  DNS server.
+* John Hardin [wrote a
+  thing](http://www.impsec.org/~jhardin/antispam/make_sendgrid_rule.sh) that
+  turns the lists into a SpamAssassin rule file for direct blocking.
