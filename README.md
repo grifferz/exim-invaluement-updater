@@ -91,9 +91,9 @@ to play with groups or filesystem ACLs.
   incoming mails and allow you to add your own scores. You'd need to manage the
   regular download of the SPBL yourself.
 * [spamassassin-sendgrid](https://github.com/fmbla/spamassassin-sendgrid) is a
-  SpamAssassin plugin whuich extracts the SendGrid client ID and allows it to
-  be passed to a DNSBL, for those who have loaded Invaluement's lists into a
-  DNS server.
+  SpamAssassin plugin which extracts the SendGrid client ID and allows it to
+  be queried against a DNSBL, for those who have loaded Invaluement's lists
+  into a DNS server.
 * John Hardin [wrote a
   thing](http://www.impsec.org/~jhardin/antispam/make_sendgrid_rule.sh) that
   turns the lists into a SpamAssassin rule file for direct blocking.
