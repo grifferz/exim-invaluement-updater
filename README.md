@@ -32,7 +32,7 @@ Configuration" section below.
 
 2. Run `/usr/local/sbin/exim-invaluement-updater.sh` manually as root to make
    sure it works. By default this will create ACL files in
-   `/var/lib/invaluement/`.
+   `/var/lib/invaluement-spbl/`.
 
 3. Place `etc/cron.d/exim-invaluement-updater` in `/etc/cron.d/` to make it run
    every day.
