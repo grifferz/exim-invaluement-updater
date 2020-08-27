@@ -27,6 +27,23 @@ You will also need to reference the ACL files this creates from your main Exim
 configuration. Generate the ACL files first and then see the "Exim
 Configuration" section below.
 
+### Logging
+By default the stderr log level is set to 2 (warnings and above) and the syslog
+level is set to 3 (notices and above). As this script is typically run from
+cron any output might be lost or end up as an email.
+
+Set the environment variables `LOG_LEVEL` and/or `SYSLOG_LEVEL` to a numeric
+value to use something other than defaults. These can be set to:
+
+| Level | Meaning                |
+| ----- | ---------------------- |
+| 0     | Fatal issues only      |
+| 1     | Errors or above        |
+| 2     | Warnings or above      |
+| 3     | Notices or above       |
+| 4     | Informational or above |
+| 5     | Debug or above         |
+
 ## Installation
 1. Place `exim-invaluement-updater.sh` in `/usr/local/sbin/`.
 
