@@ -14,7 +14,7 @@ sender. Either way, you can use Invaluement's lists for SMTP-time ACLs.
 This script checks for newer lists, downloads them and converts them to
 Exim-format ACL files.
 
-### Prerequisites
+## Prerequisites
 
 `bash` and `curl`.
 
