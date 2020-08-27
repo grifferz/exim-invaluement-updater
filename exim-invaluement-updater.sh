@@ -139,7 +139,7 @@ then
 fi
 
 curl --location --silent --time-cond "${data_dir}/${id_file}" "$id_url" |
-    sed -e 's/[0-9]\{1,\}/bounces+&-*@sendgrid.net/;t;d' > "$eiu_tmp_dir/id"
+    sed -e 's/[0-9]\{1,\}/^bounces\\+&-.*@sendgrid.net$/;t;d' > "$eiu_tmp_dir/id"
 
 if [ -s "$eiu_tmp_dir/id" ]
 then
