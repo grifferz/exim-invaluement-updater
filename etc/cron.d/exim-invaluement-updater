@@ -1,7 +1,7 @@
-# Run once per day with a deterministic delay so that every system using this
-# doesn't download at once.
+# Run every five minutes with a deterministic delay so that every system using
+# this doesn't download at once.
 
 # Take the host ID (a string of hex), put "0x" on the start of it so that it's
-# a number format that expr understands, then do modulus 1440 to get a number
-# of minutes between 0 and 1439 to sleep for.
-1 0 * * * root if test -x /usr/local/sbin/exim-invaluement-updater.sh; then sleep $(expr $(printf \%d 0x$(hostid)) \% 1440)m; /usr/local/sbin/exim-invaluement-updater.sh; else true; fi
+# a number format that expr understands, then do modulus 600 to get a number of
+# seconds between 0 and 599 to sleep for.
+*/5 * * * * root if test -x /usr/local/sbin/exim-invaluement-updater.sh; then sleep $(expr $(printf \%d 0x$(hostid)) \% 600); /usr/local/sbin/exim-invaluement-updater.sh; else true; fi
